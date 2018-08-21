@@ -5,7 +5,7 @@
  
     `print("Hello, world!")`
  */
-
+print("Hello World");
 /*:
  ## Variables
 
@@ -21,6 +21,9 @@ students = 7
  Try creating a variable and/or constant for your name, and age.
  What happens if you try to change the value of a constant?
  */
+let myName = "Nathan Wainwright";
+let myAge = 37;
+// myAge = 38; // can't do once set as let, would need to use "var'
 
 
 //: ---
@@ -32,7 +35,8 @@ students = 7
  - Experiment:
  Hold down the Option key and click on the variables `school` and `students` above to see a popup window with information about the variable. If we click on `school`, we can see it's a `String`. What type is `students`?
  */
-// Students is of type int
+// Students is of type:Int
+// schhol is type:String
 /*:
  We can change the data stored in a variable using the *assignment operator* `'='`. The new value must _always_ be the same type as the variable, you can't assign a new value with a different type.
  
@@ -42,7 +46,11 @@ students = 7
   What happens if you try to change the value to a `Double` like 4.1?
  */
 
-var weeksCompleted = 4
+var weeksCompleted = 4.1
+// swift changes type based on data inputted; as no type specified when var written/created.
+// "4?" // type:String
+// 4 type:Int
+// 4.1 type:Double
 
 /*:
  As you can see, you don't have to write the type explicitly. Providing a value when you create a constant or variable lets the compiler _infer_ its type. In the example above, the compiler infers that `students` is an integer because its initial value is an integer.
@@ -71,12 +79,12 @@ let explicitDouble: Double = 70
  What type are the variables `tipAmount`, and `isOpen`?
  */
 
-var tipAmount = 6.01
-// tipAmount's type is:
+var tipAmount:Float = 6.01
+// tipAmount's type is:Float
 
 
-var isOpen = true
-// isOpen's type is:
+var isOpen:Bool = true
+// isOpen's type is:Bool
 
 /*:
 Values are never implicitly converted to another type. If you need to convert a value to a different type, explicitly make an instance of the desired type.
@@ -85,7 +93,9 @@ Values are never implicitly converted to another type. If you need to convert a 
 let label = "The width is "
 let width = 94
 let widthLabel = label + String(width)
-
+// binary operator can't be applied to operands of type "string" and "int"
+// also W4D1_Playground.playground:89:24: note: overloads for '+' exist with these partially matching parameter lists: (Int, Int), (String, String), (UnsafeMutablePointer<Pointee>, Int), (UnsafePointer<Pointee>, Int)
+//let widthLabel = label + width
 /*:
  - Experiment:
  Try removing the conversion to `String` from the last line. What error do you get?
@@ -95,6 +105,24 @@ let widthLabel = label + String(width)
  - Callout(Challenge):
  Let's solve some simple geometric math problems. For each question, make sure you show your work just like how your teachers told you in high school. Show all the variables you are using and give them meaningful names. Hint: You can declare your own 'pi' using 3.14
  */
+var areaCircle = 0.0;
+let myPi = 3.14;
+var radiusCircle = 5.0;
+//areaCircle = myPi * radiusCircle;
+// either need to leave vars untyped; or if one is typed:Float, then all do. else errors out.
+
+var circumferenceCircle:Float = 0.0;
+
+//circumferenceCircle = myPi * ( radiusCircle * radiusCircle);
+
+var volumeCylinder = 0.0;
+var heightCylinder = 10.4;
+
+//volumeCylinder = myPi * ((radiusCircle * radiusCircle) * heightCylinder);
+
+
+
+
 
 /*:
  - Callout(Formulas):
@@ -114,6 +142,15 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: Make sure your radius is of type `Double`
  */
+radiusCircle = 10;
+
+areaCircle = myPi * Double(radiusCircle * radiusCircle);
+// Binary operator '*' cannot be applied to operands of type 'Double' and 'Int'
+
+
+
+
+
 
 /*:
  - Callout(Problem 2):
@@ -122,6 +159,8 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: Radius is half the length of the diameter
  */
+radiusCircle = 24.0;
+circumferenceCircle = Float(2 * myPi * Double(radiusCircle))
 
 /*:
  - Callout(Problem 3):
@@ -130,6 +169,11 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: You can double-check your answers yourself or on Google... Google has a really easy input mechanism for all three of these formulas if you just search them up.
  */
-
+var threeHeightCylinder = 7.0;
+var threeRadiusCircle = 5.0;
+var threeVolumeCylinder = 0.0
+threeVolumeCylinder = Double(myPi * (threeRadiusCircle * threeRadiusCircle) * threeHeightCylinder)
+//volumeCylinder = myPi * (radiusCircle * radiusCircle) * heightCylinder
+//Binary operator '*' cannot be applied to operands of type 'Double' and 'Int'
 
 //: [Next](@next)

@@ -19,18 +19,66 @@ myDictionary["Principal"] = 1
  - Experiment:
  Try creating an array and dictionary using `'let'` vs `'var'` then try adding something to them. What do you notice? For the array, you can use a method called 'append' to add something to it.
  */
+// We can declare an array with square brackets syntax
+var testMyNumberArray = [1,2,3]
+print("The value at index 1 is: \(testMyNumberArray[1])")
+testMyNumberArray.append(5)
+print("The value at index 3 is: \(testMyNumberArray[3])")
+
+let testerArray = [1,2,3]
+// testerArray.append(5)
+// exit status 1
+// main.swift:8:1: error: cannot use mutating member on immutable value: 'testerArray' is a 'let' constant
+// testerArray.append(5)
+// ^~~~~~~~~~~
+// main.swift:7:1: note: change 'let' to 'var' to make it mutable
+// let testerArray = [1,2,3]
+// ^~~
+// var
+
+
+// We can declare a dictionary with square brackets and key/value data
+var testmyDictionary = ["Students" : 5, "Teachers" : 2]
+// This is how we add a new key/value to our dictionary
+testmyDictionary["Principal"] = 1
+print("TEST: \(testmyDictionary)")
+
+// We can declare a dictionary with square brackets and key/value data
+let toastmyDictionary = ["Students" : 5, "Teachers" : 2]
+// This is how we add a new key/value to our dictionary
+// toastmyDictionary["Principal"] = 1
+// print("TEST: \(toastmyDictionary)")
+
+// exit status 1
+// main.swift:10:32: error: cannot assign through subscript: 'toastmyDictionary' is a 'let' constant
+// toastmyDictionary["Principal"] = 1
+// ~~~~~~~~~~~~~~~~~              ^
+// main.swift:8:1: note: change 'let' to 'var' to make it mutable
+// let toastmyDictionary = ["Students" : 5, "Teachers" : 2]
+// ^~~
+// var
+
+
+
+
+
 
 
 /*:
  - Experiment:
  Try creating an empty array with an explicit type `[type]`. What happens when you add a value that isn't the same type?
  */
+var emptyDoubles: [Int] = []
+
+//emptyDoubles.append(5.5)
+//Cannot convert value of type 'Double' to expected argument type 'Int'
 
 
 /*:
  - Experiment:
  Try creating an empty dictionary with an explicit type. `[keyType: valueType]`
  */
+var emptyDictionary = [String: String]()
 
 
 /*:
@@ -43,6 +91,25 @@ myDictionary["Principal"] = 1
  - reverse
  - count
  */
+var experimentTestMyNumberArray = [1,2,3]
+
+experimentTestMyNumberArray.append(56) // adds 56 to end of array
+print(experimentTestMyNumberArray)
+
+experimentTestMyNumberArray.insert(34, at: 2) // inserts 34 at index 2
+print(experimentTestMyNumberArray)
+
+experimentTestMyNumberArray.remove(at: 1) // removes 2, from index 1
+print(experimentTestMyNumberArray)
+
+// experimentTestMyNumberArray.removeAll() // clears array
+//print(experimentTestMyNumberArray)
+
+experimentTestMyNumberArray.reverse() // revserse order
+print(experimentTestMyNumberArray)
+
+experimentTestMyNumberArray.count // returns int of total number of elements.
+print(experimentTestMyNumberArray.count)
 
 
 /*:
@@ -52,6 +119,15 @@ myDictionary["Principal"] = 1
  - isEmpty
  - count
  */
+var thisIStestmyDictionary = ["Students" : 5, "Teachers" : 2, "Professors" : 5]
+
+thisIStestmyDictionary.removeValue(forKey: "Students")
+
+print(thisIStestmyDictionary)
+
+thisIStestmyDictionary.isEmpty
+
+thisIStestmyDictionary.count
 
 
 /*:
@@ -60,6 +136,14 @@ myDictionary["Principal"] = 1
  
     Finally, print out each person's name from the array using their index and string interpolation
 */
+var thisIsAnErray = [String]()
+
+thisIsAnErray.append("John")
+
+thisIsAnErray.append("Karen")
+
+thisIsAnErray.append("Jane")
+
 
 
 /*:
@@ -74,6 +158,10 @@ myDictionary["Principal"] = 1
  
     On the next line, add this last person's info: Bob - $45000
  */
+var moneyDictionary = ["John" : 50000, "Jane" : 70000, "Karen" : 62000]
 
+moneyDictionary["Bob"] = 45000
+
+moneyDictionary
 
 //: [Next](@next)

@@ -19,13 +19,16 @@ var doubleNumberValue: Double? = nil
  - Experiment:
  Declare a non-optional variable of a `String` and set it to `nil`. What happens?
  */
-
+//var myStringy:String = nil
+// Nil cannot initialize specified type 'String'
 
 /*:
  - Experiment:
  Declare an optional variable of a type `String` and set an initial `String` value to it. Then set it to `nil` on the next line. Does this work? Why or why not?
  */
-
+var stringyThing:String? = "THIS"
+stringyThing = nil
+// just telling swift to empty the var?
 
 /*:
  Let's consider multiplying two numbers together that are of different types. Since we have a `Double` and an `Int`, we need to convert the two numbers to the same type. For example, creating a new `Double` using an `Int`.
@@ -42,11 +45,19 @@ ratio * convertIntegerValue // now this works!
 /*:
  Now let's say I have a `String` that contains digits and I want to use the numbered value of the `String` to multiply with another `Double`.
  */
+var testString:String = "55"
+
+var testNumber = Double(testString)!
+var otherNumber = 55.0
+var answer = testNumber * otherNumber
+
 
 /*:
  - Experiment:
  Declare a `String` containing digits and try converting it to a `Double` the same way shown in the above example. What do you notice about the variable type? Hint: Use 'Option' + Mouse Click on the variable to see the type
  */
+
+
 
 
 /*:
@@ -106,7 +117,7 @@ print("\(myOptionalDouble!)")
   The code below uses a conditional unwrap on `gravityConstant`. This creates a new variable `unwrapped`, but only if `gravityConstant` is *not* nil. If you option click on the variable `unwrapped` you will notice that it is a `Double` not a `Double?`
 */
 
-let gravityConstant: Double? = 9.8
+let gravityConstant: Double? = 55.8988989
 
 if let unwrapped = gravityConstant {
     // unwrapped exists in this block, and is number unwrapped.
@@ -121,19 +132,23 @@ if let unwrapped = gravityConstant {
  - Experiment:
  Try changing `gravityConstant` to nil. What happens?
  */
-
+// prints "gravityConstant did not unwrap"
 
 /*:
  - Experiment:
  Create an array with containing elements of any type of your choice. Try experimenting with the array methods `'first'` and `'last'` to find out what they do. You'll see that both return optional values. Print out the values of first and last by using conditional unwrapping.
  */
+var THISexperimentTestMyNumberArray = [1,2,3,4,5,6,7,8]
 
+THISexperimentTestMyNumberArray.first!
+
+THISexperimentTestMyNumberArray.last!
 
 /*:
  - Experiment:
  Using the same array, experiment with the array method `'indexOf'` and find out what it does. Print out the value using conditional unwrapping.
  */
-
+THISexperimentTestMyNumberArray.index(of: 4)!
 
 /*:
  - Callout(Challenge):
@@ -150,3 +165,11 @@ if let unwrapped = gravityConstant {
     Try printing a car's price using a name that doesn't exist.
 */
 //: [Next](@next)
+var carMake = ["Mazda3" : 50000, "CRV" : 60000, "Hummer" : 100000]
+
+print("This \(carMake["Mazda3"]!)")
+print("This \(carMake["Mazda3"] ?? 400)") // will do 'carmake' OR' print default.
+
+carMake["Mazda3"]!
+carMake["CRV"]!
+carMake["Hummer"]!
