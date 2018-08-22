@@ -11,19 +11,20 @@
  Here we declare a class by using the `'class'` keyword and then the name of the class. Within the braces we are free to add properties and new methods for class.
  */
 class ShapeClass {
-    var numberOfSides = 0
-    func description() -> String {
-        return "A shape with \(numberOfSides) sides."
-    }
+  var numberOfSides = 0
+  var name = "text"
+  func description() -> String {
+    return "A shape with \(numberOfSides) sides, and it's name \(name)"
+  }
 }
 /*:
  The struct version looks the same except we use the keyword `'struct'`.
  */
 struct ShapeStruct {
-    var numberOfSides = 0
-    func description() -> String {
-        return "A shape with \(numberOfSides) sides."
-    }
+  var numberOfSides = 0
+  func description() -> String {
+    return "A shape with \(numberOfSides) sides."
+  }
 }
 
 /*:
@@ -32,10 +33,22 @@ struct ShapeStruct {
  */
 
 
+var thisItem = ShapeClass()
+
+thisItem.name = "ROMBUS"
+thisItem.numberOfSides = 6
+
+thisItem.description()
+
+
+
+
 /*:
  - Experiment:
  Try creating an instance of the ShapeClass. We can do this by writing the class name then putting parentheses '()' after the class name. Assign it to a declared variable and try setting the variables 'numberofSides' and 'name' and calling the 'description' method.
  */
+
+
 
 
 /*:
@@ -54,6 +67,12 @@ class NamedShapeClass {
         return "A shape with \(numberOfSides) sides."
     }
 }
+
+var TesterTester = NamedShapeClass(name: "thisname")
+TesterTester.numberOfSides = 55
+
+TesterTester.description()
+
 
 /*:
  - Experiment:

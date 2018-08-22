@@ -72,29 +72,29 @@ print(randoNumbs)
  - Experiment:
  Take a look at the example below. Modify the code so that it searches for both the largest and smallest number. Then print out the result.
  */
-let interestingNumbers = [
-  "Prime": [2, 3, 5, 7, 11, 13],
-  "Fibonacci": [1, 1, 2, 3, 5, 8],
-  "Square": [1, 4, 9, 16, 25],
-]
-var largest = 0
-var smallest = 1000
-for (_, numbers) in interestingNumbers {
-  for number in numbers {
-    if number > largest {
-      largest = number
-    }
-    if number < smallest {
-      smallest = number
-    }
-  }
-}
-print(largest)
-print(smallest)
-
-var numbersArr = [3,5,64,44,9,9]
-print(numbersArr.min() ?? 0)
-print(numbersArr.max() ?? 0)
+//let interestingNumbers = [
+//  "Prime": [2, 3, 5, 7, 11, 13],
+//  "Fibonacci": [1, 1, 2, 3, 5, 8],
+//  "Square": [1, 4, 9, 16, 25],
+//]
+//var largest = 0
+//var smallest = 1000
+//for (_, numbers) in interestingNumbers {
+//  for number in numbers {
+//    if number > largest {
+//      largest = number
+//    }
+//    if number < smallest {
+//      smallest = number
+//    }
+//  }
+//}
+//print(largest)
+//print(smallest)
+//
+//var numbersArr = [3,5,64,44,9,9]
+//print(numbersArr.min() ?? 0)
+//print(numbersArr.max() ?? 0)
 
 
 
@@ -104,11 +104,11 @@ print(numbersArr.max() ?? 0)
  Hint: Use an `_` so that you can avoid making another unecessary variable for the iteration value.
  */
 
-//let interestingNumbers = [
-//    "Prime": [2, 3, 5, 7, 11, 13],
-//    "Fibonacci": [1, 1, 2, 3, 5, 8],
-//    "Square": [1, 4, 9, 16, 25],
-//]
+let interestingNumbers = [
+    "Prime": [2, 3, 5, 7, 11, 13],
+    "Fibonacci": [1, 1, 2, 3, 5, 8],
+    "Square": [1, 4, 9, 16, 25],
+]
 //var largest = 0
 //for (_, numbers) in interestingNumbers {
 //    for number in numbers {

@@ -24,6 +24,17 @@ namedPersonTuple.age
  Try creating your own tuple. Mix in different variable types and try mixing some parameters with names and some without. Does it still work?
  */
 
+// We can also consider naming each value for clarity
+var namedPersonTHISTuple = ("Jane", lastName: 4.555555, age: 23)
+
+// This way, we can also access the values using their name
+namedPersonTHISTuple.0
+namedPersonTHISTuple.lastName
+namedPersonTHISTuple.age
+
+
+
+
 
 /*:
  - Experiment:
@@ -31,19 +42,72 @@ namedPersonTuple.age
  */
 
 
+// We can also consider naming each value for clarity
+var namedPersonTHATTHISTuple = ("Jane", lastName: 4.555555, age: 23, namedPersonTuple)
+
+// This way, we can also access the values using their name
+namedPersonTHATTHISTuple.0
+namedPersonTHATTHISTuple.lastName
+namedPersonTHATTHISTuple.age
+namedPersonTHATTHISTuple.3.age
+namedPersonTHATTHISTuple.3.firstName
+namedPersonTHATTHISTuple.3.lastName
+
+
+
 /*:
  - Experiment:
  We took a look at tuple earlier during the 'Loops' section. Can you tell where it is being used? Experiment with the tuple names and even change up the interesting numbers to see what's possible.
  */
 
-let interestingNumbers = [
-    "Prime": [2, 3, 5, 7, 11, 13],
-    "Fibonacci": [1, 1, 2, 3, 5, 8],
-    "Square": [1, 4, 9, 16, 25],
-]
-for (kind, numbers) in interestingNumbers {
-    
-}
+//let interestingNumbers = [
+//    "Prime": [2, 3, 5, 7, 11, 13],
+//    "Fibonacci": [1, 1, 2, 3, 5, 8],
+//    "Square": [1, 4, 9, 16, 25],
+//]
+//for (kind, numbers) in interestingNumbers {
+//
+//}
+
+let interestingNumbers = (
+  This: [2, 3, 5, 7, 11, 13],
+  Place: [1, 1, 2, 3, 5, 8],
+  Square: [1, 4, 9, 16, 25]
+)
+
+interestingNumbers.Place[0]
+
+
+
+//var largest = 0
+//var smallest = 1000
+//for (kind, numbers) in interestingNumbers {
+//  for number in numbers {
+//    if number > largest {
+//      largest = number
+//    }
+//    if number < smallest {
+//      smallest = number
+//    }
+//  }
+//}
+//print(largest)
+//print(smallest)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*:
  - Callout(Challenge):
@@ -72,6 +136,9 @@ enum Months: Int{
     
     func abbreviatedStringForm() -> String {
         switch self {
+        case .January:
+          return "JAN"
+
             default:
                 return ""
         }
@@ -79,16 +146,17 @@ enum Months: Int{
 }
 
 //: Now we can represents the months in our program with easy readiablity and minimal mistakes.
-let januaryMonth = Months.January
+let januaryMonth = Months.January.rawValue
 let marchMonth = Months.March
 
+let testedJan = Months.January.abbreviatedStringForm()
 /*:
  - Experiment:
  Try adding '.rawValue' to the end of `Months.Januray` and `Months.March` above. What value did you get? How are these values assigned to the months?
  \
 Try removing the '= 1' from the Months enum. Now what is different?
  */
-
+// if you take  =1 from jan... starts index at 0
 
 /*:
  - Experiment:
