@@ -47,7 +47,10 @@ thisItem.description()
  - Experiment:
  Try creating an instance of the ShapeClass. We can do this by writing the class name then putting parentheses '()' after the class name. Assign it to a declared variable and try setting the variables 'numberofSides' and 'name' and calling the 'description' method.
  */
-
+var otherShape = ShapeClass()
+otherShape.name = "BLOBER"
+otherShape.numberOfSides = 55
+otherShape.description()
 
 
 
@@ -78,6 +81,26 @@ TesterTester.description()
  - Experiment:
  Add another initializer to our 'NamedShapeClass'. Have this initializer take in 'name' and 'numberOfSides' as its parameters. Then test it out by creating an instance of 'NamedShapeClass'.
  */
+class NameyShapeyClass {
+  var numberOfSides: Int = 0
+  var name: String
+  
+  init(name: String, size: Int) {
+    self.name = name
+    self.numberOfSides = size
+  }
+  
+  func description() -> String {
+    return "A \(name) with \(numberOfSides) sides."
+  }
+}
+
+var twissley = NameyShapeyClass(name: "thingythip", size: 555)
+twissley.description()
+
+
+
+
 
 
 /*:
@@ -89,10 +112,46 @@ TesterTester.description()
  - override the description method and print out a new description to indicate the side-length and number of sides for this square
  - test all your functions after you've finished
  */
+//class NameyShapeyClass {
+//  var numberOfSides: Int = 0
+//  var name: String
+//
+//  init(name: String, size: Int) {
+//    self.name = name
+//    self.numberOfSides = size
+//  }
+//
+//  func description() -> String {
+//    return "A \(name) with \(numberOfSides) sides."
+//  }
+//}
 
 class Square : NamedShapeClass {
-    
+  var sideLength: Int = 0
+//  var numberOfSides: Int = 0
+  
+  convenience init(name: String, numberOfSides: Int, sideLength: Int) {
+    self.init(name: name)
+//    name = name
+    self.sideLength = sideLength
+//    numberOfSides = numberOfSides
+    var area = sideLength * sideLength
+    func description() -> String {
+      return "A \(name) with a side length of \(sideLength) and number of sides \(numberOfSides)"
+    }
+  }
 }
+
+var letsSeeYouWork = Square(name: "HELL", numberOfSides: 44, sideLength: 3)
+
+letsSeeYouWork.description()
+
+
+
+
+
+
+
 
 /*:
  - Callout(Challenge):
@@ -109,6 +168,69 @@ class Square : NamedShapeClass {
  - Add an instance of Toyota called toyota. Initialize it.
  - Add the drive() method to make sure it prints out "Prius"
  */
+//class NameyShapeyClass {
+//  var numberOfSides: Int = 0
+//  var name: String
+//
+//  init(name: String, size: Int) {
+//    self.name = name
+//    self.numberOfSides = size
+//  }
+//
+//  func description() -> String {
+//    return "A \(name) with \(numberOfSides) sides."
+//  }
+//}
+
+//// url: https://teamtreehouse.com/community/when-we-initialize-a-subclass-we-first-need-to-initialize-the-properties-in-our-base-class-then-call-the-super-class
+//class Vehicle {
+//  var numberOfWheels = 0
+//  var description: String {
+//    return "\(numberOfWheels) wheel(s)"
+//  }
+//}
+//
+//class Bicycle: Vehicle {
+//  var airpump: Bool
+//
+//  override init() {
+//    airpump = true
+//    super.init()
+//    numberOfWheels = 2
+//  }
+//}
+
+
+class Car {
+  var modelType: String
+  init(model: String) {
+    self.modelType = model
+  }
+  func drive() -> String {
+    return "This Car is a \(modelType)"
+  }
+}
+
+class Toyota: Car{
+  
+  init() {
+    super.init(model: "Prius")
+  }
+}
+
+var rogueCar = Car(model: "Rogue")
+rogueCar.drive()
+
+var cheapCar = Toyota()
+cheapCar.drive()
+
+
+
+
+
+
+
+
 
 
 
@@ -120,28 +242,57 @@ First, create a Person class with a name property and a custom initializer that 
 \
 Now create the same Person class but convert it to a struct. Uncomment 'Section B'. What do think will happen? What are the results?
 */
-// Implement Person class under here!
+//// Implement Person class under here!
 
 
-// Section A
-//var firstPersonObject = Person(name: "Joe")
-//var secondPersonObject = firstPersonObject
+//struct Person {
+//  var name: String
+//  init(name: String) {
+//    self.name = name
+//
+//  }
+//}
+//
+//
+//
+//// Section A
+//var firstPersonObject = Person(name: "Joe") // Person
+//var secondPersonObject = firstPersonObject //Person
 //secondPersonObject.name = "Jane"
 //
-//print(firstPersonObject.name)
-//print(secondPersonObject.name)
+//print(firstPersonObject.name) //Joe
+//print(secondPersonObject.name) //Jane
 
 
-// Implement Person struct under here!
+//// Implement Person struct under here!
+
+//class Person {
+//  var name: String
+//  init(name: String) {
+//    self.name = name
+//
+//  }
+//}
 
 
-// Section B
+
+
+//// Section B
 //var firstPersonStruct = Person(name: "Joe")
 //var secondPersonStruct = firstPersonStruct
 //secondPersonStruct.name = "Jane"
 //
-//print(firstPersonStruct.name)
-//print(secondPersonStruct.name)
+//print(firstPersonStruct.name) //Jane
+//print(secondPersonStruct.name) //Jane
+
+
+
+
+
+//: ALL DONE
+//:-
+
+
 
 
 //: [Next](@next)

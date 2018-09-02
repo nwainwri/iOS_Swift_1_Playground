@@ -57,13 +57,20 @@ var answer = testNumber * otherNumber
  Declare a `String` containing digits and try converting it to a `Double` the same way shown in the above example. What do you notice about the variable type? Hint: Use 'Option' + Mouse Click on the variable to see the type
  */
 
-
+//var experiString:String = "77"
+//
+//var experiDouble = Double(experiString) // Double?
 
 
 /*:
  - Experiment:
  With your newly converted `Double` from a `String`, try multiplying it with the 'ratio' variable. What happens?
  */
+
+//var experiTotal = experiDouble * ratio //Value of optional type 'Double?' not unwrapped; did you mean to use '!' or '?'?
+
+//var experiTotal = experiDouble! * ratio // works
+
 
 
 /*:
@@ -88,6 +95,18 @@ print("\(myOptionalDouble!)")
   - Experiment:
  Now you try! Try printing out your converted `Double?` with a force unwrap
 */
+//let experiOptionalDouble: Double! = 12.0
+//print("\(myOptionalDouble!)")
+//
+//
+//var experiString:String = "aa"
+//
+////Go back and change your String to something that has no digits. What happens and why?
+//var experiDouble = Double(experiString) // var ends up having "nil"
+
+
+
+
 
 
 
@@ -96,6 +115,9 @@ print("\(myOptionalDouble!)")
  Go back and change your `String` to something that has no digits. What happens and why?
  */
 
+// DID THIS ABOVE
+
+
 
 
 /*:
@@ -103,12 +125,36 @@ print("\(myOptionalDouble!)")
  Declare an optional variable of a type `String` and set an initial `String` value to it. Try printing it.
  Now print it again, but this time unwrap the optional variable using the `'!'`. What's different about the two lines you printed?
  */
+var nullyString: String? = "nullytestest"
+
+print(nullyString) // yellow error ;: Expression implicitly coerced from 'String?' to Any
+                    // prints, "Optional("nullytestest")\n"
+
+
+var nullyStringSecond: String? = "nullytestest"
+
+print(nullyStringSecond!) // prints "nullytesttest"
+
+
+
+
 
 
 /*:
  - Experiment:
  Try setting an optional `String` variable to a non-optional `String` variable. What happens? What can you do to prevent the compiler from throwing an error?
  */
+
+var nubblySquipString: String? = "hellperdoodle"
+
+//var normalString: String = nubblySquipString //throws RED: Value of optional type 'String?' not unwrapped; did you mean to use '!' or '?'?
+
+//var normalString: String = nubblySquipString!
+
+// *** OR
+
+var normalString: String? = nubblySquipString
+
 
 
 /*:
@@ -173,3 +219,25 @@ print("This \(carMake["Mazda3"] ?? 400)") // will do 'carmake' OR' print default
 carMake["Mazda3"]!
 carMake["CRV"]!
 carMake["Hummer"]!
+
+
+
+
+
+
+
+
+
+//: ALL DONE
+//:-
+
+
+
+
+
+
+
+
+
+
+

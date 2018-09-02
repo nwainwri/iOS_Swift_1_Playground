@@ -111,7 +111,7 @@ var radiusCircle = 5.0;
 //areaCircle = myPi * radiusCircle;
 // either need to leave vars untyped; or if one is typed:Float, then all do. else errors out.
 
-var circumferenceCircle:Float = 0.0;
+var circumferenceCircle = 0.0;
 
 //circumferenceCircle = myPi * ( radiusCircle * radiusCircle);
 
@@ -143,9 +143,19 @@ Volume of cylinder = pi * radius^2 * height
  Hint: Make sure your radius is of type `Double`
  */
 radiusCircle = 10;
-
+//Area of circle = pi * radius^2
 areaCircle = myPi * Double(radiusCircle * radiusCircle);
 // Binary operator '*' cannot be applied to operands of type 'Double' and 'Int'
+
+//Circumference of circle = 2 * pi * radius
+circumferenceCircle = 2 * myPi * radiusCircle
+
+
+
+
+
+
+
 
 
 
@@ -160,7 +170,7 @@ areaCircle = myPi * Double(radiusCircle * radiusCircle);
  Hint: Radius is half the length of the diameter
  */
 radiusCircle = 24.0;
-circumferenceCircle = Float(2 * myPi * Double(radiusCircle))
+//circumferenceCircle = Float(2 * myPi * Double(radiusCircle))
 
 /*:
  - Callout(Problem 3):
@@ -172,8 +182,17 @@ circumferenceCircle = Float(2 * myPi * Double(radiusCircle))
 var threeHeightCylinder = 7.0;
 var threeRadiusCircle = 5.0;
 var threeVolumeCylinder = 0.0
-threeVolumeCylinder = Double(myPi * (threeRadiusCircle * threeRadiusCircle) * threeHeightCylinder)
+//threeVolumeCylinder = Double(myPi * (threeRadiusCircle * threeRadiusCircle) * threeHeightCylinder)
 //volumeCylinder = myPi * (radiusCircle * radiusCircle) * heightCylinder
 //Binary operator '*' cannot be applied to operands of type 'Double' and 'Int'
 
+
+
+//: ALL DONE
+//:-
+
+
+
+
+//:
 //: [Next](@next)

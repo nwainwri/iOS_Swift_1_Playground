@@ -109,15 +109,15 @@ let interestingNumbers = [
     "Fibonacci": [1, 1, 2, 3, 5, 8],
     "Square": [1, 4, 9, 16, 25],
 ]
-//var largest = 0
-//for (_, numbers) in interestingNumbers {
-//    for number in numbers {
-//        if number > largest {
-//            largest = number
-//        }
-//    }
-//}
-//print(largest)
+var largest = 0
+for (_, numbers) in interestingNumbers {
+    for number in numbers {
+        if number > largest {
+            largest = number
+        }
+    }
+}
+print(largest)
 
 
 /*:
@@ -125,6 +125,22 @@ let interestingNumbers = [
  Given a number `N`, from 0 to `N`, add up all the odd numbers and print out the result.
  ie: N = 5, 1+3+5 = 9
  */
+
+var number = 9 // 1, 3, 5, 7
+
+var total = 0
+for num in 0..<number {
+  
+  if (num % 2 == 0) {
+    //
+  } else {
+    total = total + num
+  }
+  
+  print(total)
+}
+
+
 
 
 /*:
@@ -141,5 +157,37 @@ let interestingNumbers = [
  */
 
 let numberArray = [1, 4, 5, 5, 5, 3, 2, 1, 4, 2, 2, 2, 1]
+
+var countStuff = [Int:Int]()
+
+for num in numberArray {
+  // loop thru
+  
+  if let check = countStuff[num] {
+    var value = check
+    value = value + 1
+    countStuff[num] = value
+  } else {
+    countStuff[num] = 1
+  }
+
+}
+print("THIS: \(countStuff)")
+
+
+
+
+//: ALL DONE
+//:-
+
+
+
+
+
+
+
+
+
+
 
 //: [Next](@next)
