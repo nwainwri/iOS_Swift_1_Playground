@@ -212,7 +212,7 @@ nathan.description()
 
 
 
-//: UNSURE I DID THE ABOVE PART RIGHT
+//: questions about this part
 //:-
 
 
@@ -403,7 +403,8 @@ testDoubleDouble.secondsMinutes() // 15 mins
 
 
 
-
+//: ALL DONE, OTHER THEN ONE QUESTION ABOVE
+//:-
 
 
 
